@@ -4,6 +4,9 @@ from prediction_helper import predict
 
 # Define the page layout
 st.title('Health Insurance Cost Predictor')
+st.text('Based on your age, number of dependents, Genectic risk by selecting different')
+st.text('parameters or inputting factors and click on Predict button to display Health')
+st.text('Care Insurance Cost predictions.')
 
 categorical_options = {
     'Gender': ['Male', 'Female'],
@@ -32,7 +35,7 @@ with row1[0]:
 with row1[1]:
     number_of_dependants = st.number_input('Number of Dependants', min_value=0, step=1, max_value=20)
 with row1[2]:
-    income_lakhs = st.number_input('Income in Lakhs', step=1, min_value=0, max_value=200)
+    income_pound = st.number_input('Income in Pound (£)', step=1, min_value=0, max_value=200000)
 
 with row2[0]:
     genetical_risk = st.number_input('Genetical Risk', step=1, min_value=0, max_value=5)
@@ -59,7 +62,7 @@ with row4[2]:
 input_dict = {
     'Age': age,
     'Number of Dependants': number_of_dependants,
-    'Income in Lakhs': income_lakhs,
+    'Income in Pound (£)': income_pound,
     'Genetical Risk': genetical_risk,
     'Insurance Plan': insurance_plan,
     'Employment Status': employment_status,
